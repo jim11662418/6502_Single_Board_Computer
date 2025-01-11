@@ -1,5 +1,5 @@
 
-6502 Single Board Computer based on [Grant Searle's 6502 Computer](http://searle.x10host.com/6502/Simple6502.html). 
+6502 Single Board Computer based on [Grant Searle's 6502 Computer](http://searle.x10host.com/6502/Simple6502.html). The only real differences are the use of a GAL16V8 for 'glue' logic to reduce the chip count and the assition of a 6522 VIA for parallel I/O. 
 
 <p align="center"><img src="/images/6502 SBC CPU.png"/>
 <p align="center">6502 SBC CPU</p><br>
