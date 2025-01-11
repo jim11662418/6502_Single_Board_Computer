@@ -1,0 +1,46 @@
+Name 6502SBC;
+Partno ;
+Revision;
+Date 02/02/2021;
+Designer Jim Loos;
+Company ;
+Location ;
+Assembly ;
+Device G16V8A;
+
+
+/* Inputs:      */
+Pin 2  = RW;
+Pin 3  = PH2;
+Pin 4  = Addr3;	/* A15	*/
+Pin 5  = Addr2;	/* A14	*/
+Pin 6  = Addr1;	/* A13	*/
+Pin 7  = Addr0;	/* A12	*/
+Pin 8  = IRQ;
+
+FIELD ADDRESS = [Addr3..Addr0];
+
+/* Outputs:		*/
+Pin 19 = !RAMCS;
+Pin 18 = !ROMCS;
+Pin 17 = !RD;
+Pin 16 = !WR;
+Pin 15 = !ACIA;
+Pin 14 = !VIA;
+Pin 13 = !RTS;
+
+/*  just a reminder for me (Jim)... */
+/*  ! = NOT                         */
+/*  & = AND                         */
+/*  # = OR                          */
+/*  $ = XOR                         */
+
+/* Address decoding	*/
+RAMCS = ADDRESS:[0..7];         /* 0000-7FFF    */
+ROMCS = ADDRESS:[C..F];         /* C000-FFFF    */
+ACIA  = ADDRESS:[A];            /* A000-AFFF    */
+VIA   = ADDRESS:[B];            /* B000-BFFF    */
+
+RD =       PH2 & RW;
+WR =       PH2 & !RW;
+RTS =      IRQ;

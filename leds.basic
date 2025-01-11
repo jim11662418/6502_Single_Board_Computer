@@ -1,0 +1,18 @@
+10 P=45056: REM address of VIA
+15 POKE P+2,255: REM program port B as outputs
+20 K=1: REM start with the least significant bit
+30 FOR I=1 TO 8
+40 POKE P,K: REM light the LED
+50 K=K*2: REM shift left
+60 GOSUB 200: REM delay
+70 NEXT I: REM do all 8 LEDs
+80 K=128: REM start with the most significant bit
+90 FOR I=1 TO 8
+100 POKE P,K: REM light the LED
+110 K=K/2: REM shift right
+120 GOSUB 200: REM delay
+130 NEXT I: REM do all 8 LEDs
+140 GOTO 20: REM back to the beginning
+200 FOR J=0 TO 60
+210 NEXT J
+220 RETURN
