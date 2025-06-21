@@ -3,6 +3,9 @@ A simple 6502 Single Board Computer based on [Grant Searle's 6502 Computer](http
 
 Grant's original firmware has been modified to add a [6502 System Monitor based on SyMon III](https://github.com/LIV2/SyMon-III). Assemble the firmware with the [Macro Assembler AS](http://john.ccac.rwth-aachen.de:8000/as/)
 
+<p align="center"><img src="/images/6502 SBC.JPG"/>
+<p align="center">6502 SBC</p><br>
+
 <p align="center"><img src="/images/6502 SBC CPU.png"/>
 <p align="center">6502 SBC CPU</p><br>
 
